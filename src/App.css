@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Lexend;
+  src: url(./Assets/fonts/lexend/Lexend-VariableFont_wght.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.fluid-container{
+  overflow-x: hidden;
   min-height: 100vh;
+  background-image: url('./Assets/Images/bg.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.aplo{
+  margin-left: 2vw;
+  width: 15vw;
+  position: relative;
+  z-index: 4;
+}
+
+.customIndent{
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.navCustomDesign{
+  color: #AEAEAE;
+  font-family: Lexend;
+  font-weight: bolder;
+  margin: 0 3vw;
+  font-size: 3vh;
+  z-index: 4;
+  position: relative;
+}
+
+.navCustomDesign:hover{
+  color:white;
+}
+
+.z{
+  position: fixed;
+  z-index: 5;
+  background-image: linear-gradient(#000000, rgba(19, 44, 57, 0.6));
+  /* border-bottom: 1px solid rgb(48, 33, 100); */
+  width: 100%;
+}
+
+.center{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.social-logo{
+  height: 100vh;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#sociologo{
+  width: 30vw;
+  
+}
+
+.blur{
+  background: rgba(7, 10, 26, 0.5);
+  padding: 8vh 2vh;
+  backdrop-filter: blur(5px);
+  border-radius: 5vh;
+}
+
+.newContainer{
+  min-height: 100vh;
+  background: #1A3543;
 }
