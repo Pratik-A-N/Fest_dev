@@ -17,20 +17,20 @@ export default function Navbar() {
               </button>
               <div className="collapse navbar-collapse" id="navbarSupportedContent" >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0 customIndent" >
-                  <li className="nav-item tabs">
-                    <Link className="nav-link navCustomDesign" to="/compi" >Competitions</Link>
-                  </li>
+                  {/* <li className="nav-item tabs">
+                    <Link className="nav-link navCustomDesign" to="/ticket" >Ticket</Link>
+                  </li> */}
                   <li className="nav-item tabs">
                     <Link className="nav-link navCustomDesign" to="/events" >Events</Link>
                   </li>
-                  <li className="nav-item tabs">
+                  {/* <li className="nav-item tabs">
                     <a className="nav-link navCustomDesign" href="#incen" >Map</a>
                   </li>
                   <li className="nav-item tabs">
                     <Link className="nav-link navCustomDesign" to="/sponsors" >Sponsors</Link>
-                  </li>
+                  </li> */}
                   <li className="nav-item tabs">
-                    <Link className="nav-link navCustomDesign" to="/contact" >Team</Link>
+                    <Link className="nav-link navCustomDesign" to="/contact" >Contact us</Link>
                   </li>
                 </ul>
               </div>

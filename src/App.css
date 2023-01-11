@@ -71,3 +71,33 @@
   min-height: 100vh;
   background: #1A3543;
 }
+
+.eventimg{
+  width: 20vw;
+}
+
+.up{
+  padding-top: 20vh;
+}
+
+.cen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.etitle{
+  color: #f0f0f0;
+  font-family: Lexend;
+  font-size: 3vh;
+}
+
+.innertitle{
+  color:white;
+  font-size: 2.5vh;
+}
+
+#loading{
+  display: none;
+}
