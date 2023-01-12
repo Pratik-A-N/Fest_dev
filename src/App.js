@@ -13,7 +13,7 @@ import Ticket from './Components/Ticket';
 class App extends Component {
   render() {
     return (
-    <Router basename={'/fest'}>
+    <Router basename={'/socialfest'}>
       <div className="App">
       <Routes>
           <Route path='/' element={ <Home/> }></Route>
