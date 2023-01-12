@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function () {
+export default function Footer() {
   return (
     <div>
             <div class="row display-flex justify-content-center fo pt-5">

@@ -1,5 +1,5 @@
 import React from 'react'
-import Google from './Google'
+// import Google from './Google'
 import Navbar from './Navbar'
 import bg from '../Assets/Images/bg.jpeg'
 // import TestGoogle from './TestGoogle'

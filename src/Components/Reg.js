@@ -36,9 +36,9 @@ export default function Reg() {
         // console.log(user);
         axios.post(API_URL, user)
         .then((response) =>{
-          console.log(response);
+          // console.log(response);
           if(response.status === 201){
-            console.log("success");
+            // console.log("success");
             let x = document.getElementById("loading");
             x.style.display = 'none';
             let y = document.getElementById("afterload");
