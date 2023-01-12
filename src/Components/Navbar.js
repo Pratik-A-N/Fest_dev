@@ -17,9 +17,9 @@ export default function Navbar() {
               </button>
               <div className="collapse navbar-collapse" id="navbarSupportedContent" >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0 customIndent" >
-                  {/* <li className="nav-item tabs">
-                    <Link className="nav-link navCustomDesign" to="/ticket" >Ticket</Link>
-                  </li> */}
+                  <li className="nav-item tabs">
+                    <Link className="nav-link navCustomDesign" to="/" >Home</Link>
+                  </li>
                   <li className="nav-item tabs">
                     <Link className="nav-link navCustomDesign" to="/events" >Events</Link>
                   </li>
@@ -29,6 +29,9 @@ export default function Navbar() {
                   <li className="nav-item tabs">
                     <Link className="nav-link navCustomDesign" to="/sponsors" >Sponsors</Link>
                   </li> */}
+                  <li className="nav-item tabs">
+                    <Link className="nav-link navCustomDesign" to="/ticket" >Ticket</Link>
+                  </li>
                   <li className="nav-item tabs">
                     <Link className="nav-link navCustomDesign" to="/contact" >Contact us</Link>
                   </li>

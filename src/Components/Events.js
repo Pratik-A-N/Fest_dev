@@ -1,44 +1,21 @@
 import React from 'react'
-import jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 import { useEffect, useState } from 'react';
 import Navbar from './Navbar'
 import axios from "axios";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import TestGoogle from './TestGoogle';
 const google = window.google;
 
-const API_URL = "https://cr.abhyudayiitb.org/festapi/Google"
+// const API_URL = "https://cr.abhyudayiitb.org/festapi/Google"
 const API_URL1 = "https://cr.abhyudayiitb.org/festapi/Event"
 const API_URL2 = "https://cr.abhyudayiitb.org/festapi/Event_reg"
 
 export default function Events() {
   const { state } = useLocation();
   const [lineup, setlineup] = useState({})
-  const navigate = useNavigate();
-  function handleCallbackResponse(response){
-    // console.log("Encoded JWT ID token: " + response.credential);
-    var userObject = jwt_decode(response.credential);
-    const guser ={
-      name : userObject.name,
-      email : userObject.email,
-    }
-    axios.post(API_URL, guser)
-    .then(res => {  
-      if(res.data["status"] === 200){
-          navigate("/events",{
-            state:{
-              data:res.data
-            }
-          })
-      }else{
-          navigate("/register",{
-            state:{
-              data:guser
-            }
-          })
-        }
-      })
-      .catch(err => console.log(err));
-  }
+  // const navigate = useNavigate();
+
 
   useEffect(() => {
     axios.get(API_URL1)
@@ -47,10 +24,6 @@ export default function Events() {
     })
     .catch(error => console.log(error))
 
-    google.accounts.id.initialize({
-      client_id : "161055812663-vs09cgjl4lujuuv6vi1km7hhcnqro91v.apps.googleusercontent.com",
-      callback : handleCallbackResponse
-    })
   }, []);
 
   const menu = lineup
@@ -77,41 +50,50 @@ export default function Events() {
     } 
   }
 
-  const handleTicket =()=>{
-    navigate("/ticket",{
-      state:{
-        data: state.data
-      }
-    })
-  }
+  // const handleTicket =()=>{
+  //   navigate("/ticket",{
+  //     state:{
+  //       data: state.data
+  //     }
+  //   })
+  // }
   
 
   return (
     <div className="newContainer">
+        <TestGoogle/>
         <Navbar/>
         <div className="up">
-        {(()=>{
+        {/* {(()=>{
             if(state !=null){
-               return <div><button onClick={(e)=> handleTicket(e)}>Ticket</button></div>
+               return <div className='cen'>
+                
+
+                <button onClick={(e)=> handleTicket(e)} className='regbt' >Ticket</button>
+                
+                </div>
             }
             })()
-        }
+        } */}
           <div className="row">
           {
             Array.from(menu).map(item =>{
-              return <div className='col-md-4 cen mt-5 mb-5' key={item.pk}>
-                        <div className="img">
-                          <img src={item.imgurl} alt="" className='eventimg' />
+              return <div className='col-lg-4 cen mt-5 mb-5 ' key={item.pk}>
+                        <div className="outer-box cen">
+                          <div className="img">
+                            <img src={item.imgurl} alt="" className='eventimg' />
+                          </div>
+                          <div className="etitle">
+                            {item.name}
+                          </div>
                         </div>
-                        <div className="etitle">
-                          {item.name}
-                        </div>
+                        
                         <div className="regbt">
                           {(()=>{
                             if(state !=null && state.data[item.tag] === true){
                               return <div>Registered</div>
                             }else{
-                              return <button type='button' onClick={(e)=> handlereg(item.tag)} id={item.tag} >Register</button>
+                              return <button type='button' onClick={(e)=> handlereg(item.tag)} id={item.tag} className='regbt'>Register</button>
                             }
                           })()
                           }

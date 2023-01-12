@@ -2,20 +2,26 @@ import React, { useState } from 'react'
 import { useLocation, useNavigate} from 'react-router-dom'
 import { Form, FormGroup, Input, Label } from "reactstrap";
 import axios from 'axios';
+import bg from '../Assets/Images/bg.jpeg'
 
 const API_URL = "https://cr.abhyudayiitb.org/festapi/Normal"
 
 export default function Reg() {
     const navigate = useNavigate();
     const {state} = useLocation();
+
+    const generateRandomId =()=>{
+      const uniqueId = "SF-" + Math.random().toString(36).substr(2, 6);
+      return uniqueId
+    }
     
     const [user, setUser] = useState({
         pk: 0,
+        Ano: generateRandomId(),
         name:state.data["name"],
         email:state.data["email"],
         contact:"",
       })
-
       const onChange = (e) => {
         // props.onChange({ ...user, [e.target.name]: e.target.value })
         setUser({...user, [e.target.name]: e.target.value });
@@ -59,6 +65,7 @@ export default function Reg() {
 
     return (
         <div className="fluid-container">
+          <img src={bg} alt="" id='bg' />
             <div className="row display-flex justify-content-center social-logo">
                 <div className="col-lg-8">
                     <div className="blur">
@@ -95,10 +102,10 @@ export default function Reg() {
                 />
               </FormGroup>
               
-              <div className="extbt">
-              <button className="bt1">
+              <div className="extbt cen">
+              <button className="regbt">
                 <span className="spinner-border spinner-border-sm " id="loading" role="status" aria-hidden="true"></span>
-                <span id="afterload">Register</span>
+                <span id="afterload" >Register</span>
               </button>
               </div>
             </Form>

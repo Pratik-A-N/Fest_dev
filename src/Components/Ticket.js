@@ -1,14 +1,63 @@
-import React from 'react'
+
 import downloadjs from 'downloadjs'
 import html2canvas from "html2canvas"
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
+import React, { useEffect, useState } from 'react'
+import {GoogleLogin} from 'react-google-login'
+import { gapi } from 'gapi-script'
+import axios from 'axios'
+import Navbar from './Navbar'
+import festlogo from '../Assets/Images/final.svg'
+import person from '../Assets/Images/person.svg'
+
+
+const clientId ="161055812663-vs09cgjl4lujuuv6vi1km7hhcnqro91v.apps.googleusercontent.com"
+const API_URL = "https://cr.abhyudayiitb.org/festapi/Google"
 
 export default function Ticket() {
-    const { state } = useLocation();
     const navigate = useNavigate();
+    const [user, setuser] = useState({})
+    
+
+    useEffect(() => {
+        const initClient = () => {
+              gapi.client.init({
+              clientId: clientId,
+              scope: ''
+            });
+         };
+         gapi.load('client:auth2', initClient);
+     });
+
+     const onSuccess = (res) => {
+        const guser={
+          name:res.profileObj.name,
+          email:res.profileObj.email
+        }
+  
+        axios.post(API_URL, guser)
+      .then(res => {  
+        if(res.data["status"] === 200){
+            setuser(res.data)
+        }else{
+            navigate("/register",{
+              state:{
+                data:guser
+              }
+            })
+          }
+        })
+        .catch(err => console.log(err));
+  
+      };
+      const onFailure = (err) => {
+          console.log('failed:', err);
+      };
 
     const handleCaptureClick = () =>{
+        
+
         const element = document.getElementById("delegateId")
         html2canvas(element,{logging:true, letterRendering: 1, useCORS:true})
         .then(canvas =>{
@@ -21,40 +70,47 @@ export default function Ticket() {
 
         })
 
-        navigate("/events",{
-            state:{
-                data: state.data
-            }
-        })
+        navigate("/events")
     }
 
   return (
     <div className="newContainer">
-        <div className="col-lg-6 center">     
-            <button type="button" className='signInDiv1' onClick={handleCaptureClick}>Download</button>   
+        <Navbar/>
+        <div className='bt'>
+        <GoogleLogin
+            clientId={clientId}
+            buttonText="Sign in with Google"
+            onSuccess={onSuccess}
+            onFailure={onFailure}
+            cookiePolicy={'single_host_origin'}
+            isSignedIn={true}
+            
+        />
         </div>
-        <div className="col-lg-6 center">
+        <div className="up cen">
+            <div className="col-lg-6 center m-4">     
+                <button type="button" className='regbt' onClick={handleCaptureClick}>Download</button>   
+            </div>
+            <div className="col-lg-6 cen">
                 <div id="delegateId">
                     <div className="IdCard">
-                        {/* <img src={bookmark} alt="" id="bookmark" /> */}
-                        <div className="header">
-                            <div className="card-body">
-                                <div className="idydp">YDP</div>
-                            </div>
+                        <div className="icon">
+                            <img src={festlogo} alt="" />
                         </div>
                         <div className="icon">
-                            {/* <img src={icon} alt="" /> */}
+                            <img src={person} alt="" />
                         </div>
                         <div className="name">
-                            {state.data["name"]}
+                         Name: {user.name}
                         </div>
                         <div className="row other">
-                            <div className="email">Email: {state.data["email"]}</div>
-                            
+                            <div className="email">ID: {user.Ano}</div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        
     </div>
   )
 }
