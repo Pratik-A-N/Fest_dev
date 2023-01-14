@@ -2,6 +2,21 @@
   font-family: Lexend;
   src: url(./Assets/fonts/lexend/Lexend-VariableFont_wght.ttf);
 }
+
+@font-face {
+  font-family: CarterOne;
+  src: url(./Assets/fonts/Carter_One/CarterOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: Rubric;
+  src: url(./Assets/fonts/Rubik_Moonrocks/RubikMoonrocks-Regular.ttf);
+}
+
+body{
+  overflow:-x hidden;
+}
+
 .row{
   --bs-gutter-x: none;
 }
@@ -13,6 +28,7 @@
   background-repeat: no-repeat;
   background-size: cover; */
 }
+
 
 #bg{
   position: absolute;
@@ -210,7 +226,13 @@ p{
   -webkit-text-stroke-width: 0.3px;
   -webkit-text-stroke-color: #D77C3F;
 }
-
+.etitl{
+  color: black;
+  font-family: Lexend;
+  font-size: 3vh;
+  -webkit-text-stroke-width: 0.3px;
+  
+}
 .innertitle{
   color:white;
   font-size: 2.5vh;
@@ -285,6 +307,357 @@ p{
     padding: 0 2vh;
   }
 }
+
+/* Animation */
+.animation{
+  background-image:radial-gradient(#e78e52,#ad5f2b,#8d4c20,#572e13) ;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#applogo{
+  position: fixed;
+  z-index: 10;
+  top: 15vh;
+  width: 100%;
+  text-align: center;
+}
+.socialfest{
+  font-size: 20vh;
+  font-family: Rubric;
+}
+
+#bg{
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#place{
+  width: 5vh;
+}
+
+.layer1{
+  position: absolute;
+  z-index: 1;
+}
+
+.map{
+  position: fixed;
+  z-index: 2;
+  top: 20vh;
+  left: 10vw;
+}
+
+.map2{
+  position: fixed;
+  z-index: 2;
+  top: 20vh;
+  right: 10vw;
+}
+
+.map3{
+  position: fixed;
+  z-index: 2;
+  bottom: 20vh;
+  right: 10vw;
+}
+
+.map4{
+  position: fixed;
+  z-index: 2;
+  bottom: 20vh;
+  left: 10vw;
+}
+
+.mapbt{
+  
+  background: transparent;
+  border: none;
+  /* transform: rotateZ(-30deg); */
+  animation: pop 1s  infinite ease-in-out;
+}
+
+#place:hover{
+  transform: scale(1.4);
+}
+
+.pg{
+  background: transparent;
+  border: none;
+}
+
+.modal-body{
+  display: flex;
+  justify-content: center;
+}
+#modlepg{
+  width: 60vh;
+  z-index: 5;
+}
+
+.customContent{
+  position: absolute;
+  margin-top: 10vh;
+  width: 75%;
+  height: 70vh;
+  border: 1px solid black;
+}
+
+.closebt{
+  position: absolute;
+  z-index: 8;
+  right: -5vw;
+  background: transparent;
+  border: none;
+}
+#closebt{
+  width: 5vh;
+  height: 5vh;
+}
+.date{
+  position: relative;
+  top: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 3.8vh;
+  font-family: CarterOne;
+  
+}
+.inner-wrapper{
+  width: fit-content;
+  animation: datedrag 2s 1 ease-in-out;
+}
+.inner-wrap{
+  width: fit-content;
+  animation: themedrag 2s 1 ease-in-out;
+}
+
+@keyframes datedrag {
+  from{
+    transform: translateX(-50vw);
+  }to{
+    transform: translateX(0);
+  }
+}
+.theme{
+  position: relative;
+  font-family: CarterOne;
+  /* left: -5vw; */
+  top: -6vh;
+  font-size: 7vh;
+}
+
+@keyframes themedrag {
+  from{
+    transform: translateX(30vw);
+  }to{
+    transform: translateX(0);
+  }
+}
+
+.sf-wrap{
+  animation: enlarge 2s 1 ease-in-out;
+}
+
+@keyframes enlarge {
+  from{
+    transform: scale(0.1);
+  }to{
+    transform: scale(1);
+  }
+}
+
+.path{
+  display: flex;
+  position: fixed;
+  left: 13vw;
+  top:10vh;
+  width: 74vw;
+  border-top: 10px dashed black;
+  border-radius: 50%;
+  height: 30vh;
+}
+
+
+.path1{
+  display: flex;
+  position: fixed;
+  left: 13vw;
+  bottom:10vh;
+  width: 74vw;
+  border-bottom: 10px dashed black;
+  border-radius: 50%;
+  height: 30vh;
+}
+
+.underplace{
+    border-radius: 50%;
+    height: 2vh;
+    border: 3px solid black;
+}
+
+.left-nav{
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-nav{
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shelf{
+  border-bottom: 5px solid rgb(80, 32, 13) ;
+  width: 12vw;
+  margin: 10vh 0;
+}
+.book{
+  border: 1px solid black;
+  padding: 1vh 2vh ;
+  border-top: 0;
+  width: fit-content;
+  font-family: Lexend;
+  font-size: 2.5vh;
+  background-image: linear-gradient(#D97C3F,#d65600dc);
+}
+
+.right{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.upper-lid{
+  height: 1vh;
+  background: #142D3A;
+  width: fit-content;
+}
+
+.total-book{
+  width: fit-content;
+}
+
+.total-book:hover .upper-lid{
+  animation: open 0.2s 1 ease-in;
+  transform: translateY(-1.5vh) ;
+  box-shadow: 0 0 50px rgb(178, 224, 135);
+}
+
+@keyframes open {
+  from{
+    transform: translateY(0) rotateZ(0deg);
+  }to{
+    transform: translateY(-1.5vh) ;
+  }
+}
+
+/* .outernav{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+} */
+
+@keyframes blink {
+  from{
+    opacity: 0;
+    /* transform: translateX(15px); */
+  }
+  to{
+    opacity: 1;
+    /* transform: translateX(30px); */
+  }
+}
+
+
+@keyframes pop {
+  0% {
+    transform:  translate(0px,0px);
+  }
+  50% {
+    transform:  translateY(1vh);
+  }
+  100% {
+    transform:  translate(0px,0px);
+  }
+
+}
+
+.padd{
+  padding: 0 20vh;
+}
+
+.event-nav{
+  display: flex;
+  justify-content: center;
+}
+
+.event-name{
+  color: white;
+    font-family: 'Lexend';
+    font-size: 5vh;
+    /* padding-left: 5vh; */
+    text-align: center;
+    text-decoration-line: underline;
+    margin-bottom: 5vh;
+}
+
+.event-disc{
+  font-family: Lexend;
+  padding-right: 5vh;
+}
+
+.about-event{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width:425px) {
   .bx{

@@ -1,45 +1,100 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import {useGoogleLogin} from '@react-oauth/google';
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
-// import logo from "../Assets/images/Logo/logo2.png"
-
-const logo = "https://raw.githubusercontent.com/Pratik-A-N/developYdp/master/src/Assets/images/Logo/logo2.png"
-// import Google from './Google'
+const API_URL = "https://cr.abhyudayiitb.org/festapi/Google"
 
 export default function Navbar() {
-  return (
-    <div className="row z" id='zo'>
-    <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid">
-              <a className="navbar-brand" href="https://abhyudayiitb.org" target="/"> <img src={logo} alt="" className='aplo' /> </a>
-              <button className="navbar-toggler" style={{background: "white"}} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent" >
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0 customIndent" >
-                  <li className="nav-item tabs">
-                    <Link className="nav-link navCustomDesign" to="/" >Home</Link>
-                  </li>
-                  <li className="nav-item tabs">
-                    <Link className="nav-link navCustomDesign" to="/events" >Events</Link>
-                  </li>
-                  {/* <li className="nav-item tabs">
-                    <a className="nav-link navCustomDesign" href="#incen" >Map</a>
-                  </li>
-                  <li className="nav-item tabs">
-                    <Link className="nav-link navCustomDesign" to="/sponsors" >Sponsors</Link>
-                  </li> */}
-                  <li className="nav-item tabs">
-                    <Link className="nav-link navCustomDesign" to="/ticket" >Ticket</Link>
-                  </li>
-                  <li className="nav-item tabs">
-                    <Link className="nav-link navCustomDesign" to="/contact" >Contact us</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+  const [Data, setData] = useState({})
+  const [isLogin, setisLogin] = useState(false)
 
-    </div>
+  const navigate = useNavigate();
+  const login = useGoogleLogin({
+    onSuccess: async respose => {
+      try{
+        const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo",{
+          headers:{
+            "Authorization":`Bearer ${respose.access_token}`
+          }
+        })
+        // console.log(res.data);
+        const guser={
+          name:res.data.name,
+          email:res.data.email
+        }
+        setisLogin(true)
+        axios.post(API_URL, guser)
+      .then(res => {  
+        if(res.data["status"] === 200){
+            setData(res.data)
+        }else{
+            navigate("/register",{
+              state:{
+                data:guser
+              }
+            })
+          }
+        })
+        .catch(err => console.log(err));
+      }catch(err){
+        console.log(err);
+      }
+    }
+  });
+  // console.log(Data);
+  return (
+    <>
+    {/* <div className="outernav"> */}
+      <div className="left-nav">
+          <div className="shelf">
+            <div className="total-book">
+              <div className="upper-lid" id='lid1'></div>
+              <Link to="">
+                <button className="book" onClick={login} id="login">
+                {isLogin ? <span>Logged In</span> : <span>Log In</span>}
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="shelf">
+            <div className="total-book">
+              <div className="upper-lid" id='lid1'></div>
+              <Link to="">
+                <button className="book" >
+                  About Us
+                </button>
+              </Link>
+            </div>
+          </div>
+      </div>
+
+      <div className="right-nav">
+          <div className="shelf right">
+            <div className="total-book right">
+              <div className="upper-lid" id='lid1'></div>
+              <Link  to="/events" state={{data:Data}} >
+                <button className="book" >
+                  Events
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="shelf right">
+            <div className="total-book ">
+              <div className="upper-lid" id='lid1'></div>
+              <Link to="">
+                <button className="book" >
+                  Contact Us
+                </button>
+              </Link>
+            </div>
+          </div>
+      </div> 
+    {/* </div> */}
+      
+    </>
   )
 }

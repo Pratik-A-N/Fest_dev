@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <div>
       <div className="newContainer">
-        <Navbar/>
+        {/* <Navbar/> */}
         <div className="up">
           <div className="Deartment cen">Overall Coordinators</div>
           <div className="row display-flex justify-content-center">

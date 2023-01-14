@@ -1,4 +1,5 @@
 import React from 'react'
+
 // import Google from './Google'
 import Navbar from './Navbar'
 import bg from '../Assets/Images/bg.jpeg'
@@ -11,7 +12,7 @@ export default function Home() {
   return (
     <div className="fluid-container">
       <img src={bg} alt="" id='bg' />
-      <Navbar/>
+      {/* <Navbar/> */}
       {/* <Google/> */}
       <a className='scrollbt' href='#about'>
         <img src={down} alt="" id='down'/>
