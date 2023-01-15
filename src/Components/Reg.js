@@ -68,7 +68,7 @@ export default function Reg() {
           <img src={bg} alt="" id='bg' />
             <div className="row display-flex justify-content-center social-logo">
                 <div className="col-lg-8">
-                    <div className="blur">
+                    <div className="blur pr">
                     <Form onSubmit={(e) => {handleSubmit(e)}}>
               <FormGroup>
                 <Label for="" className="innertitle">Name:</Label>

@@ -895,6 +895,9 @@ button{
   float: right;
 }
 
+.pr{
+  padding: 3vh 5vw;
+}
 
 .accordion-item{
   margin:2vh 30vw;

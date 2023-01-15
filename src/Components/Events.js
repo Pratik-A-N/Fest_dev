@@ -13,6 +13,8 @@ import leader from '../Assets/Images/Event/leadership.png'
 import cpr from '../Assets/Images/Event/cpr.jpeg'
 import sdw from '../Assets/Images/Event/self defense.png'
 import eq from '../Assets/Images/Event/eq.png'
+import socio from '../Assets/Images/Event/socio tech.png'
+import disable from '../Assets/Images/Event/diffable.png'
 import Ticket from './Ticket';
 import about from '../Assets/Images/about.png'
 
@@ -35,7 +37,7 @@ export default function Events() {
             "Authorization":`Bearer ${respose.access_token}`
           }
         })
-        console.log(res.data);
+        // console.log(res.data);
         const guser={
           name:res.data.name,
           email:res.data.email
@@ -130,10 +132,99 @@ export default function Events() {
           {display ? <Ticket data={data} /> : <div></div>} 
         </div>
         <div className='pt-3'>
-        
+
+          {/* exhi */}
+      <div className="row padd ">
+          <div className="event-name" id="ws">Exhibitions</div>
+            
+            <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={socio} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Socio Tech Exhibition
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#sociomodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.sociotech === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("sociotech")} id="sociotech" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
+            {/* <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={block} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Blockchain meets Sustainability
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#blockmodal">
+              <img src={about} alt="" id='about-icon' />
+
+              </button>
+              <div >
+                {(()=>{
+                        if(state !=null && data.block === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("block")} id="block" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div> */}
+            
+            
+
+          </div>
+
+
+        {/* sessions */}
           <div className="row padd ">
           <div className="event-name" id="ws">Speaker Sessions</div>
             
+          <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={disable} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Differently-Abled
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#disablemodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.disable === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("disable")} id="disable" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
             <div className="col-lg-6 cen mb-5">
               <div className="outer-box cen">
                 <div className="img">
@@ -217,7 +308,7 @@ export default function Events() {
             
 
           </div>
-
+{/* workshops */}
           <div className="row padd" >
           <div className="event-name" id="ws">Workshops</div>
           <div className="col-lg-6 cen mb-5">
@@ -513,6 +604,61 @@ The workshop is open to all, and certificates for completion will be awarded. Re
 Theories suggest that IQ contributes to 20% of your success, whereas the rest is attributed to EQ. You might not be the smartest in the room, but you sure can be emotionally mature.
 
 We are releasing our first workshop of Social Fest - Improv your EQ! The event will be kickstarted by an improv performance by LIT(Lemon Improv Theatre). Graced by clinical psychologist Pragya Lodha who will be telling us how to improve our emotional health. There will also be informal games to bring out the creativity in you!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sociomodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={socio} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Socio Tech Exhibition
+                </div>
+                "The true test of any technology is how it benefits humanity." - Naveen Jain.
+
+Abhyuday, IIT Bombay presents Socio-Tech exhibition as part of Social Fest 2023
+
+A perfect opportunity for all tech enthusiasts to put their brilliant minds together for the betterment of our society and get to know about the advancement in new technologies for social good.
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="disablemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={disable} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Differently-Abled
+                </div>
+                "There is no greater disability in society than the inability to see a person as more." - Robert M. Hensel.
+
+The winners of the blind cricket World Cup, the Indian National Blind Cricket team, led by Captain Ajay Reddy, is here to share their cricketing experiences and journey of overcoming all odds to achieve their goals.
+
+Joining us will be Sumit Agarwal, Disabilities and Inclusion speaker and SDG ambassador, who will throw light on the topic 'Ability mapping'!
+
+                </div>
       </div>
     </div>
   </div>
