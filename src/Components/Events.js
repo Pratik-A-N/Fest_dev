@@ -14,6 +14,7 @@ import cpr from '../Assets/Images/Event/cpr.jpeg'
 import sdw from '../Assets/Images/Event/self defense.png'
 import eq from '../Assets/Images/Event/eq.png'
 import Ticket from './Ticket';
+import about from '../Assets/Images/about.png'
 import InstagramEmbed from 'react-instagram-embed';
 
 const API_URL = "https://cr.abhyudayiitb.org/festapi/Google"
@@ -141,8 +142,8 @@ export default function Events() {
                 </div>
               </div>
               <div className="about-event">
-              <button type="button" className='regbt mb-3' data-bs-toggle="modal" data-bs-target="#manualmodal">
-                About Event
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#manualmodal">
+                <img src={about} alt="" id='about-icon' />
               </button>
               <div>
                 {(()=>{
@@ -166,7 +167,12 @@ export default function Events() {
                   Blockchain meets Sustainability
                 </div>
               </div>
-              <div className="regbt">
+              <div className="about-event">
+              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#blockmodal">
+              <img src={about} alt="" id='about-icon' />
+
+              </button>
+              <div >
                 {(()=>{
                         if(state !=null && data.block === true){
                           return <div>Registered</div>
@@ -175,6 +181,7 @@ export default function Events() {
                         }
                       })()
                 }
+              </div>
               </div>
             </div>
 
@@ -187,7 +194,12 @@ export default function Events() {
                   Cyber Security 101
                 </div>
               </div>
-              <div className="regbt">
+              <div className="about-event">
+              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#cybermodal">
+              <img src={about} alt="" id='about-icon' />
+                
+              </button>
+              <div >
                 {(()=>{
                         if(state !=null && data.cyber === true){
                           return <div>Registered</div>
@@ -196,6 +208,7 @@ export default function Events() {
                         }
                       })()
                 }
+              </div>
               </div>
             </div>
             
@@ -214,7 +227,12 @@ export default function Events() {
                   EI-Excellence Program
                 </div>
               </div>
-              <div className="regbt">
+              <div className="about-event">
+              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#leadermodal">
+                                <img src={about} alt="" id='about-icon' />
+
+              </button>
+              <div >
                 {(()=>{
                         if(state !=null && data.leader === true){
                           return <div>Registered</div>
@@ -223,6 +241,7 @@ export default function Events() {
                         }
                       })()
                 }
+              </div>
               </div>
             </div>
 
@@ -235,7 +254,12 @@ export default function Events() {
                   CPR Workshop
                 </div>
               </div>
-              <div className="regbt">
+              <div className="about-event">
+              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#cprmodal">
+                                <img src={about} alt="" id='about-icon' />
+
+              </button>
+              <div >
                 {(()=>{
                         if(state !=null && data.cpr === true){
                           return <div>Registered</div>
@@ -245,9 +269,10 @@ export default function Events() {
                       })()
                 }
               </div>
+              </div>
             </div>
 
-            <div className="col-lg-6 cen mb-5mb-5">
+            <div className="col-lg-6 cen mb-5">
               <div className="outer-box cen">
                 <div className="img">
                   <img src={sdw} alt="" className='eventimg'  />
@@ -256,7 +281,12 @@ export default function Events() {
                  Self Defence Workshop
                 </div>
               </div>
-              <div className="regbt">
+              <div className="about-event">
+              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#sdwmodal">
+                                <img src={about} alt="" id='about-icon' />
+
+              </button>
+              <div >
                 {(()=>{
                         if(state !=null && data.sdw === true){
                           return <div>Registered</div>
@@ -265,6 +295,7 @@ export default function Events() {
                         }
                       })()
                 }
+              </div>
               </div>
             </div>
 
@@ -277,7 +308,12 @@ export default function Events() {
                  Improv Your EQ!
                 </div>
               </div>
-              <div className="regbt">
+              <div className="about-event">
+              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#eqmodal">
+                                <img src={about} alt="" id='about-icon' />
+
+              </button>
+              <div >
                 {(()=>{
                         if(state !=null && data.eq === true){
                           return <div>Registered</div>
@@ -286,6 +322,7 @@ export default function Events() {
                         }
                       })()
                 }
+              </div>
               </div>
             </div>
 
@@ -297,6 +334,174 @@ export default function Events() {
         
 {/* models  */}
 
+
+<div class="modal fade" id="manualmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={manual} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+                  Eradicating Manual Scavenging
+                </div>
+          Manual Scavenging, the practice of employing human labor for cleaning sewers and septic tanks is still very prevalent in India. Such acts of sanitation and cleaning are considered lowly and are assigned to people from the lowest rung of the social hierarchy.
+
+Join Bezwada Wilson, who for most of his adult life has fought an extraordinary and inspiring battle against manual scavenging that humiliates and diminishes not just the scavengers but us all. The campaign he leads, the Safai Karmachari Andolan, is one of the largest movements against caste discrimination in post-Independence India.
+
+Also witness the photo exhibition by photo Journalist Sudharak Olwe and see the expression of activism through his art.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="blockmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={block} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Blockchain meets Sustainability
+                </div>
+                "When decentralized blockchain protocols start displacing the centralized web services that dominate the current Internet, we'll see real internet-based sovereignty. The future Internet will be decentralised."
+Join Pratik Gauri, Founder, and CEO of 5ire.org, for a session on how blockchain can drive economic growth with global sustainability during the Annual Social Fest by Abhyuday.
+
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cybermodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={cyber} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Cyber Security 101
+                </div>
+                Join Ritesh Bhatia, a renowned cybercrime investigator and cybersecurity expert, for a talk on the latest trends in cybercrimes and how to protect your data and social media privacy during the Annual Social Fest by Abhyuday. With 20 years of experience and four TEDx talks under his belt, you don't want to miss out on this valuable information.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="leadermodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={leader} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        EI-Excellence Program
+                </div>
+                Leadership is the art of getting someone else to do something you want done because he wants to do it. —General Dwight Eisenhower
+
+Abhyuday, IIT Bombay, presents the leadership workshop for the Social Fest, i.e. EI - Excellence Program. A 2-day experiential career development workshop which will help students transform into emotionally intelligent future leaders by focusing on all 5 components of Emotional Intelligence 
+• Self-Awareness
+• Self-Regulation
+• Motivation
+• Empathy
+• Social Skills</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cprmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={cpr} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        CPR Workshop
+                </div>
+                Abhyuday, in collaboration with Dr LH Hiranandani Hospital, Powai is conducting a CPR workshop as part of our Annual Social Fest. As you may be aware, CPR is an essential skill that can save lives in emergency situations. It is crucial for all of our students to be trained in this life-saving technique so that we are already prepared when time arrives.
+
+The workshop will be led by experienced professionals who will provide hands-on training and demonstrations. You will also have the opportunity to practice CPR techniques on mannequins and receive feedback from the instructors.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sdwmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={sdw} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Self Defence Workshop
+                </div>
+                "It Is Better To Have The Power And Not Need It Than To Need It And Not Have It."
+
+Self-Defence for everyone is of utmost importance in the kind of world we live in today. We must prepare ourselves to defend ourselves when the need arises.
+
+Abhyuday, in collaboration with Mumbai Police & Academy of Self-Defense, Mumbai is conducting a Self-Defense workshop as part of our Annual Social Fest.
+
+Self-Defense workshop will strengthen you to stand bold under different adverse circumstances. The workshop will be followed by an awareness session by Mumbai Police.
+
+The workshop is open to all, and certificates for completion will be awarded. Registration is open to everyone above 12 years.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="eqmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={eq} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Improv Your EQ!
+                </div>
+                Life is a tragedy when seen in close-up, but a comedy when seen in long shot. - Charlie Chaplin
+
+Theories suggest that IQ contributes to 20% of your success, whereas the rest is attributed to EQ. You might not be the smartest in the room, but you sure can be emotionally mature.
+
+We are releasing our first workshop of Social Fest - Improv your EQ! The event will be kickstarted by an improv performance by LIT(Lemon Improv Theatre). Graced by clinical psychologist Pragya Lodha who will be telling us how to improve our emotional health. There will also be informal games to bring out the creativity in you!</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="modal fade" id="manualmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
