@@ -70,31 +70,7 @@ export default function Navbar() {
             About Us
           </button>
         </div>
-        {/* <div className="window" id='contact-window'>
-          Schedule
-        </div> */}
-          {/* <div className="shelf">
-            <div className="total-book">
-              <div className="upper-lid" id='lid1'></div>
-              <Link to="">
-                <button className="book" onClick={login} id="login">
-                {isLogin ? <span>Logged In</span> : <span>Log In</span>}
-                </button>
-              </Link>
-            </div>
-          </div> */}
-
-          {/* <div className="shelf">
-            <div className="total-book">
-              <Link to="">
-              <div className="upper-lid" id='lid1'></div>
-
-                <button className="book" onClick={openAbout}>
-                  About Us
-                </button>
-              </Link>
-            </div>
-          </div> */}
+    
       </div>
 
       <div className="right-nav">
@@ -109,34 +85,11 @@ export default function Navbar() {
         <div className="window" id='work-window'>
         <Link to="/contact">
                 <button className="book" >
-                  Contact Us
+                  Contact
                 </button>
               </Link>
         </div>
-        {/* <div className="window" id='contact-window'>
-          
-        </div> */}
-          {/* <div className="shelf right">
-            <div className="total-book right">
-              <Link  to="/events" state={{data:Data}} >
-              <div className="upper-lid" id='lid1'></div>
-                <button className="book" >
-                  Events
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          <div className="shelf right">
-            <div className="total-book ">
-              <div className="upper-lid" id='lid1'></div>
-              <Link to="/contact">
-                <button className="book" >
-                  Contact Us
-                </button>
-              </Link>
-            </div>
-          </div> */}
+        
       </div> 
     {/* </div> */}
       

@@ -15,7 +15,6 @@ import sdw from '../Assets/Images/Event/self defense.png'
 import eq from '../Assets/Images/Event/eq.png'
 import Ticket from './Ticket';
 import about from '../Assets/Images/about.png'
-import InstagramEmbed from 'react-instagram-embed';
 
 const API_URL = "https://cr.abhyudayiitb.org/festapi/Google"
 // const API_URL1 = "https://cr.abhyudayiitb.org/festapi/Event"
@@ -107,6 +106,9 @@ export default function Events() {
 
   return (
     <div className="newContainer">
+      <div className="up">
+
+      
         <div className="event-nav">
         {/* <div className='regbt'><a href="#ws">Workshops</a></div>
           <a href="/"><div className='regbt'>Talks</div></a> */}
@@ -127,7 +129,7 @@ export default function Events() {
         <div className="display-ticket">
           {display ? <Ticket data={data} /> : <div></div>} 
         </div>
-        <div className='pt-5'>
+        <div className='pt-3'>
         
           <div className="row padd ">
           <div className="event-name" id="ws">Speaker Sessions</div>
@@ -148,7 +150,7 @@ export default function Events() {
               <div>
                 {(()=>{
                         if(state !=null && data.manual === true){
-                          return <div>Registered</div>
+                          return <div className='regbt'>Registered</div>
                         }else{
                           return <button type='button' onClick={(e)=> handlereg("manual")} id="manual" className='regbt'>Register</button>
                         }
@@ -175,7 +177,7 @@ export default function Events() {
               <div >
                 {(()=>{
                         if(state !=null && data.block === true){
-                          return <div>Registered</div>
+                          return <div className='regbt'>Registered</div>
                         }else{
                           return <button type='button' onClick={(e)=> handlereg("block")} id="block" className='regbt'>Register</button>
                         }
@@ -202,7 +204,7 @@ export default function Events() {
               <div >
                 {(()=>{
                         if(state !=null && data.cyber === true){
-                          return <div>Registered</div>
+                          return <div className='regbt'>Registered</div>
                         }else{
                           return <button type='button' onClick={(e)=> handlereg("cyber")} id="cyber" className='regbt'>Register</button>
                         }
@@ -235,7 +237,7 @@ export default function Events() {
               <div >
                 {(()=>{
                         if(state !=null && data.leader === true){
-                          return <div>Registered</div>
+                          return <div className='regbt'>Registered</div>
                         }else{
                           return <button type='button' onClick={(e)=> handlereg("leader")} id="leader" className='regbt'>Register</button>
                         }
@@ -262,7 +264,7 @@ export default function Events() {
               <div >
                 {(()=>{
                         if(state !=null && data.cpr === true){
-                          return <div>Registered</div>
+                          return <div className='regbt'>Registered</div>
                         }else{
                           return <button type='button' onClick={(e)=> handlereg("cpr")} id="cpr" className='regbt'>Register</button>
                         }
@@ -289,7 +291,7 @@ export default function Events() {
               <div >
                 {(()=>{
                         if(state !=null && data.sdw === true){
-                          return <div>Registered</div>
+                          return <div className='regbt'>Registered</div>
                         }else{
                           return <button type='button' onClick={(e)=> handlereg("sdw")} id="sdw" className='regbt'>Register</button>
                         }
@@ -316,7 +318,7 @@ export default function Events() {
               <div >
                 {(()=>{
                         if(state !=null && data.eq === true){
-                          return <div>Registered</div>
+                          return <div className='regbt'>Registered</div>
                         }else{
                           return <button type='button' onClick={(e)=> handlereg("eq")} id="eq" className='regbt'>Register</button>
                         }
@@ -338,6 +340,7 @@ export default function Events() {
 <div class="modal fade" id="manualmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       <div className="row display-flex justify-content-center">
         <div className="col-lg-5 cen">
           <div className="img">
@@ -362,6 +365,8 @@ Also witness the photo exhibition by photo Journalist Sudharak Olwe and see the 
 <div class="modal fade" id="blockmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
       <div className="row display-flex justify-content-center">
         <div className="col-lg-5 cen">
           <div className="img">
@@ -385,6 +390,8 @@ Join Pratik Gauri, Founder, and CEO of 5ire.org, for a session on how blockchain
 <div class="modal fade" id="cybermodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
       <div className="row display-flex justify-content-center">
         <div className="col-lg-5 cen">
           <div className="img">
@@ -405,6 +412,8 @@ Join Pratik Gauri, Founder, and CEO of 5ire.org, for a session on how blockchain
 <div class="modal fade" id="leadermodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
       <div className="row display-flex justify-content-center">
         <div className="col-lg-5 cen">
           <div className="img">
@@ -432,6 +441,8 @@ Abhyuday, IIT Bombay, presents the leadership workshop for the Social Fest, i.e.
 <div class="modal fade" id="cprmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
       <div className="row display-flex justify-content-center">
         <div className="col-lg-5 cen">
           <div className="img">
@@ -454,6 +465,8 @@ The workshop will be led by experienced professionals who will provide hands-on 
 <div class="modal fade" id="sdwmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
       <div className="row display-flex justify-content-center">
         <div className="col-lg-5 cen">
           <div className="img">
@@ -482,6 +495,8 @@ The workshop is open to all, and certificates for completion will be awarded. Re
 <div class="modal fade" id="eqmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
       <div className="row display-flex justify-content-center">
         <div className="col-lg-5 cen">
           <div className="img">
@@ -506,6 +521,8 @@ We are releasing our first workshop of Social Fest - Improv your EQ! The event w
 <div class="modal fade" id="manualmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
       <div className="row display-flex justify-content-center">
         <div className="col-lg-5 cen">
           <div className="img">
@@ -528,7 +545,7 @@ Also witness the photo exhibition by photo Journalist Sudharak Olwe and see the 
     </div>
   </div>
 </div>
-
+</div>
     </div>
   )
 }

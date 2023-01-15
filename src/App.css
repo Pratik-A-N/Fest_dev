@@ -226,9 +226,6 @@ p{
   width: 20vw;
 }
 
-.up{
-  padding-top: 15vh;
-}
 
 .cen{
   display: flex;
@@ -290,44 +287,9 @@ p{
   display: none;
 }
 
-@media screen and (max-width:1024px) {
-  .etitle{
-    font-size: 2.6vh;
-  }
 
-}
 
-@media screen and (max-width:768px) {
-  
-  .fluid-container{
-    background: #1A3543;
-  }
-  .aplo{
-    width: 20vw;
-  }
-  #sociologo {
-    width: 50vw;
-  }
-  #bg{
-    /* display: none; */
-    height: auto;
-  }
-  .up{
-    padding-top: 10vh;
-  }
-  .eventimg{
-    width: 42vw;
-  }
-  .head{
 
-    padding : 0 2vh;
-    font-size: 3vh;
-  }
-  .content{
-    font-size: 1.8vh;
-    padding: 0 2vh;
-  }
-}
 
 /* Animation */
 .animation{
@@ -748,7 +710,7 @@ p{
 
 .about-event{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
   padding: 0 10vh;
 }
@@ -929,23 +891,53 @@ button{
   border: none;
 }
 
+.btn-close{
+  float: right;
+}
 
 
+.accordion-item{
+  margin:2vh 30vw;
+  background: transparent;
+}
+.up{
+  padding-top: 5vh;
+}
 
+@media screen and (max-width:1024px) {
+  .etitle{
+    font-size: 2.6vh;
+    width: 27vw;
+  }
+  .window{
+    width: fit-content;
+  }
 
+  .col-lg-6{
+    width: 100%;
+  }
+  .eventimg{
+    width: 27vw;
+  }
+  #about-icon{
+    width: 4vw;
+  }
+}
 
+@media screen and (max-width:768px) {
+  .accordion-item{
+    margin: 4vh;
+    background-color: transparent;
+  }
+  .desktop{
+    display: none;
+  }
 
-
-
-
-
-
-
-@media screen and (max-width:425px) {
   .left-nav{
     height: 12vh;
     flex-direction: row;
     width: 100%;
+    
   }
   .right-nav{
     height: 12vh;
@@ -962,6 +954,7 @@ button{
   }
   .newContainer{
     overflow-x: auto;
+    height: auto;
   }
   .fluid-container{
     background: #1A3543;
@@ -974,10 +967,112 @@ button{
   }
   #bg{
     /* display: none; */
-    height: auto;
+    width: auto;
+    height: 100vh;
   }
   .up{
-    padding-top: 10vh;
+    padding-top: 15vh;
+    padding-bottom: 10vh;
+  }
+  .eventimg{
+    width: 45vw;
+  }
+  .head{
+    padding : 0 2vh;
+    font-size: 3vh;
+  }
+  .content{
+    font-size: 1.8vh;
+    padding: 0 2vh;
+  }
+  .socialfest{
+    font-size: 7vh;
+  }
+  .theme{
+    top:-2vh;
+    font-size: 3vh;
+  }
+  .date{
+    top:2vh;
+    font-size: 2.2vh;
+  }
+  .event-name{
+    /* padding-top: 8vh; */
+    margin-bottom: 3vh;
+    font-size: 3vh;
+  }
+  .etitle{
+    width: fit-content;
+  }
+  .about-event{
+    padding: 0;
+  }
+  #about-icon{
+    width: 5vw;
+  }
+  .etitl{
+    text-align: center;
+  }
+  .event-disc{
+    padding: 5vh;
+    text-align: center;
+  }
+  #logo2{
+    width: 70vw;
+  }
+}
+
+
+
+@media screen and (max-width:425px) {
+  .desktop{
+    display: none;
+  }
+  .accordion-item{
+    margin: 4vh;
+    background-color: transparent;
+  }
+
+  .left-nav{
+    height: 12vh;
+    flex-direction: row;
+    width: 100%;
+    
+  }
+  .right-nav{
+    height: 12vh;
+    bottom: 0;
+    flex-direction: row;
+    width: 100%;
+  }
+  .window{
+    width: fit-content;
+    margin: 0 5vh;
+  }
+  .bx{
+    width: 69%;
+  }
+  .newContainer{
+    overflow-x: auto;
+    height: auto;
+  }
+  .fluid-container{
+    background: #1A3543;
+  }
+  .aplo{
+    width: 35vw;
+  }
+  #sociologo {
+    width: 70vw;
+  }
+  #bg{
+    /* display: none; */
+    width: auto;
+    height: 75vh;
+  }
+  .up{
+    padding-top: 15vh;
+    padding-bottom: 10vh;
   }
   .eventimg{
     width: 70vw;
@@ -1000,5 +1095,29 @@ button{
   .date{
     top:2vh;
     font-size: 2.2vh;
+  }
+  .event-name{
+    /* padding-top: 8vh; */
+    margin-bottom: 3vh;
+    font-size: 3vh;
+  }
+  .etitle{
+    width: fit-content;
+  }
+  .about-event{
+    padding: 0;
+  }
+  #about-icon{
+    width: 10vw;
+  }
+  .etitl{
+    text-align: center;
+  }
+  .event-disc{
+    padding: 5vh;
+    text-align: center;
+  }
+  #logo2{
+    width: 70vw;
   }
 }
