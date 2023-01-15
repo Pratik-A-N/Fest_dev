@@ -3,6 +3,7 @@ import {useGoogleLogin} from '@react-oauth/google';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import About from './About';
+import arrow from '../Assets/Images/down.png'
 
 const API_URL = "https://cr.abhyudayiitb.org/festapi/Google"
 
@@ -13,6 +14,16 @@ export default function Navbar() {
 
   const closeAbout =()=>{
     document.getElementById("about-animate").style.width = "0"
+  }
+
+  const showNav =()=>{
+    // console.log("clicked");
+    var show = document.getElementById('tpm')
+    if(show.style.display === 'none'){
+      document.getElementById('tpm').style.display = 'flex'
+    }else{
+      document.getElementById('tpm').style.display = 'none'
+    }
   }
 
   const [Data, setData] = useState({})
@@ -59,7 +70,38 @@ export default function Navbar() {
       <button onClick={closeAbout} id='close-abt'> &times; </button>
       <About/>
     </div>
-      <div className="left-nav">
+
+    
+      
+      <div className="left-nav" id='mobile-nav'>
+        <div className="window" id='event-window'>
+          <button className="book" onClick={login} id="login">
+            {isLogin ? <span>Logged In</span> : <span>Log In</span>}
+          </button>
+        </div>
+        <div>
+          <button onClick={showNav} >
+            <img src={arrow} alt="" id='down-icon' />
+          </button>
+        </div>
+      </div>
+          
+          <div class="tpm" id="tpm">
+          <div className="window" id='work-window'>
+          <button className="book" onClick={openAbout}>
+          About Us
+          </button>
+          </div>
+          <div className="window" id='contact-window'>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnFsX7uXTU3XE00yFbZGttRJLe_vRBseQ9ebezj5gntaFJJg/viewform">
+          <button className="book" >
+          Accommodation
+              </button>
+          </a>
+        </div>
+          </div>
+
+      <div className="left-nav" id='desktop-nav'>
         <div className="window" id='event-window'>
           <button className="book" onClick={login} id="login">
             {isLogin ? <span>Logged In</span> : <span>Log In</span>}
@@ -70,7 +112,13 @@ export default function Navbar() {
             About Us
           </button>
         </div>
-    
+        <div className="window" id='contact-window'>
+          <Link to="/contact">
+              <button className="book" >
+                Accommodation
+              </button>
+          </Link>
+        </div>
       </div>
 
       <div className="right-nav">
@@ -82,7 +130,8 @@ export default function Navbar() {
               </button>
           </Link>
         </div>
-        <div className="window" id='work-window'>
+        
+        <div className="window" id='contact-window'>
         <Link to="/contact">
                 <button className="book" >
                   Contact

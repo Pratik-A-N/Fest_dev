@@ -15,6 +15,7 @@ import sdw from '../Assets/Images/Event/self defense.png'
 import eq from '../Assets/Images/Event/eq.png'
 import socio from '../Assets/Images/Event/socio tech.png'
 import disable from '../Assets/Images/Event/diffable.png'
+import check from '../Assets/Images/Event/check.png'
 import Ticket from './Ticket';
 import about from '../Assets/Images/about.png'
 
@@ -132,6 +133,66 @@ export default function Events() {
           {display ? <Ticket data={data} /> : <div></div>} 
         </div>
         <div className='pt-3'>
+{/* health Checkup  */}
+        <div className="row padd ">
+          <div className="event-name" id="ws">Camps</div>
+            
+            <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={check} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Health Checkup Camp
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#checkmodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.health === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("health")} id="health" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
+            {/* <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={block} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Blockchain meets Sustainability
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#blockmodal">
+              <img src={about} alt="" id='about-icon' />
+
+              </button>
+              <div >
+                {(()=>{
+                        if(state !=null && data.block === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("block")} id="block" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div> */}
+            
+            
+
+          </div>
 
           {/* exhi */}
       <div className="row padd ">
@@ -658,6 +719,47 @@ The winners of the blind cricket World Cup, the Indian National Blind Cricket te
 
 Joining us will be Sumit Agarwal, Disabilities and Inclusion speaker and SDG ambassador, who will throw light on the topic 'Ability mapping'!
 
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="checkmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={check} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Health Checkup Camp
+                </div>
+                Abhyuday, IIT Bombay is organising a ‘Health Checkup Camp’ in the institute during the Annual Social Fest.
+
+The Camp is Free of Cost!
+
+The details of the camp are as follows:
+Dates and time:
+21st January, Saturday, 2-5 pm
+22nd January, Sunday, 10 am-1 pm and 2 pm-5 pm
+
+Venue: LHC Open Area (Opposite Shiru Cafe)
+
+The following examinations will be conducted in the Health Checkup Camp:
+BMI Checkup
+Dental Checkup
+Blood Pressure
+Blood Sugar Level
+Doctor Consultation
+
+Book your slots now!
                 </div>
       </div>
     </div>
