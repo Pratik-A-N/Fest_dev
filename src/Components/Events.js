@@ -151,14 +151,9 @@ export default function Events() {
                 <img src={about} alt="" id='about-icon' />
               </button>
               <div>
-                {(()=>{
-                        if(state !=null && data.health === true){
-                          return <div className='regbt'>Registered</div>
-                        }else{
-                          return <button type='button' onClick={(e)=> handlereg("health")} id="health" className='regbt'>Register</button>
-                        }
-                      })()
-                }
+                <a href="https://forms.gle/14USFvLCzUh7c6F96">
+                <div className='regbt'>Book Slots</div>
+                </a>
               </div>
               </div>
             </div>

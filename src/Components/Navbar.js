@@ -113,11 +113,11 @@ export default function Navbar() {
           </button>
         </div>
         <div className="window" id='contact-window'>
-          <Link to="/contact">
-              <button className="book" >
-                Accommodation
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnFsX7uXTU3XE00yFbZGttRJLe_vRBseQ9ebezj5gntaFJJg/viewform">
+          <button className="book" >
+          Accommodation
               </button>
-          </Link>
+          </a>
         </div>
       </div>
 
