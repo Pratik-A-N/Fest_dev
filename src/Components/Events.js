@@ -16,6 +16,7 @@ import eq from '../Assets/Images/Event/eq.png'
 import socio from '../Assets/Images/Event/socio tech.png'
 import disable from '../Assets/Images/Event/diffable.png'
 import check from '../Assets/Images/Event/check.png'
+import sam from '../Assets/Images/Event/sam.jpg'
 import Ticket from './Ticket';
 import about from '../Assets/Images/about.png'
 
@@ -149,6 +150,36 @@ export default function Events() {
           {display ? <Ticket data={data} /> : <div></div>} 
         </div>
         <div className='pt-3'>
+{/* Discussion */}
+        <div className="row padd ">
+          <div className="event-name" id="ws">Discussions</div>
+            
+            <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={sam} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Samwaad
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#samwaadmodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1NldZOcliqgQGO5fFTyBXsVC0WHQUAC5vxedTyBOwp8YXHQ/viewform">
+                <div className='regbt'>Register</div>
+                </a>
+              </div>
+              </div>
+            </div>
+
+            
+            
+
+          </div>
+
 {/* health Checkup  */}
         <div className="row padd ">
           <div className="event-name" id="ws">Camps</div>
@@ -730,6 +761,33 @@ The winners of the blind cricket World Cup, the Indian National Blind Cricket te
 
 Joining us will be Sumit Agarwal, Disabilities and Inclusion speaker and SDG ambassador, who will throw light on the topic 'Ability mapping'!
 
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="samwaadmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={sam} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Samwaad
+                </div>
+                The #Samwaad series by Abhyuday IIT Bombay is here to give young voices a place to congregate and talk about the pressing social challenges.
+Join the discussion and bring about change! 
+Make connections with like-minded people, exchange ideas, and cooperate to find solutions to the most pressing issues. 
+
+E-certificates for all the participants!
                 </div>
       </div>
     </div>
