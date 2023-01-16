@@ -48,6 +48,11 @@ export default function Navbar() {
       .then(res => {  
         if(res.data["status"] === 200){
             setData(res.data)
+            navigate("/events",{
+              state:{
+                data:res.data
+              }
+            })
         }else{
             navigate("/register",{
               state:{
@@ -75,7 +80,7 @@ export default function Navbar() {
       
       <div className="left-nav" id='mobile-nav'>
         <div className="window" id='event-window'>
-          <button className="book" onClick={login} id="login">
+          <button className="book" onClick={login} id="login-m">
             {isLogin ? <span>Logged In</span> : <span>Log In</span>}
           </button>
         </div>
@@ -103,7 +108,7 @@ export default function Navbar() {
 
       <div className="left-nav" id='desktop-nav'>
         <div className="window" id='event-window'>
-          <button className="book" onClick={login} id="login">
+          <button className="book" onClick={login} id="login-d">
             {isLogin ? <span>Logged In</span> : <span>Log In</span>}
           </button>
         </div>

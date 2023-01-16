@@ -25,7 +25,10 @@ const API_URL2 = "https://cr.abhyudayiitb.org/festapi/Event_reg"
 
 export default function Events() {
   const {state} = useLocation();
-  const [data, setdata] = useState(state.data)
+  // console.log(state.data);
+  
+  const [data, setdata] = useState({})
+  
   // console.log(data);
   // const [lineup, setlineup] = useState({})
   const navigate = useNavigate();
@@ -48,7 +51,12 @@ export default function Events() {
         axios.post(API_URL, guser)
       .then(res => {  
         if(res.data["status"] === 200){
-            setdata(res.data)
+          // setdata(res.data)
+          navigate("/events",{
+            state:{
+              data:res.data
+            }
+          })
         }else{
             navigate("/register",{
               state:{
@@ -67,10 +75,18 @@ export default function Events() {
   // console.log(data);
 
   useEffect(() => {
+    if(state !== null){
+      setdata(state.data)
+
+    }
     if(Object.keys(data).length !==0){
-        document.getElementById('login').innerHTML = "Logged In"
+        document.getElementById('login-m').innerHTML = "Logged In"
+        document.getElementById('login-d').innerHTML = "Logged In"
+
     }else{
-      document.getElementById('login').innerHTML = "Log In"
+      document.getElementById('login-m').innerHTML = "Log In"
+      document.getElementById('login-d').innerHTML = "Log In"
+
     }
   }, )
   
