@@ -17,6 +17,7 @@ import socio from '../Assets/Images/Event/socio tech.png'
 import disable from '../Assets/Images/Event/diffable.png'
 import check from '../Assets/Images/Event/check.png'
 import sam from '../Assets/Images/Event/sam.jpg'
+import rap from '../Assets/Images/Event/rap.png'
 import Ticket from './Ticket';
 import about from '../Assets/Images/about.png'
 
@@ -150,6 +151,41 @@ export default function Events() {
           {display ? <Ticket data={data} /> : <div></div>} 
         </div>
         <div className='pt-3'>
+{/* rap battle */}
+        <div className="row padd ">
+          {/* <div className="event-name" id="ws">Discussions</div> */}
+            
+            <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={rap} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Battle of the Bars
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#rapmodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.rap === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("rap")} id="rap" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
+            
+            
+
+          </div>
+          
 {/* Discussion */}
         <div className="row padd ">
           <div className="event-name" id="ws">Discussions</div>
@@ -788,6 +824,32 @@ Join the discussion and bring about change!
 Make connections with like-minded people, exchange ideas, and cooperate to find solutions to the most pressing issues. 
 
 E-certificates for all the participants!
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="rapmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={rap} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Battle of the Bars
+                </div>
+                Get ready for the fierce competition and electrifying performances as the hottest rappers in the game face off in a battle for ultimate lyrical supremacy. Witness the raw talent and undeniable skill of these lyrical geniuses as they unleash their flow and leave the crowd in awe. Catch these aspiring rappers from Dharavi as they share their stories through the trendiest form of art. 
+
+Followed by a performance by the judges:- 
+MC Heam -Hip-hop artist is known for his dynamic performances | Coach at MTV Hustle 2.0 | Teacher at @tddp. MC Josh and Azim - A classic duo from Mumbai who has set the stage on fire with bangers like Push Me and AASMAAN.
                 </div>
       </div>
     </div>
