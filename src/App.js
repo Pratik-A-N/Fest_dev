@@ -11,6 +11,7 @@ import Contact from './Components/Contact';
 import Ticket from './Components/Ticket';
 import Navbar from './Components/Navbar';
 import Animate from './Components/Animate';
+import Improv from './Components/Improv';
 
 class App extends Component {
   render() {
@@ -26,6 +27,8 @@ class App extends Component {
           <Route exact path='/register' element={ <Reg/> }></Route>
           <Route exact path='/contact' element={ <Contact/> }></Route>
           <Route exact path='/ticket' element={ <Ticket/> }></Route>
+          <Route exact path='/improv' element={ <Improv/> }></Route>
+
           {/* <Route exact path='/animate' element={ <Animate/> }></Route> */}
 
           {/* <Route exact path='/contact' element={ <Contact/> }></Route> */}
