@@ -18,6 +18,9 @@ import disable from '../Assets/Images/Event/diffable.png'
 import check from '../Assets/Images/Event/check.png'
 import sam from '../Assets/Images/Event/sam.jpg'
 import rap from '../Assets/Images/Event/rap.png'
+import women from '../Assets/Images/Event/women.jpg'
+import mental from '../Assets/Images/Event/ananyabirla.png'
+import csrc from '../Assets/Images/Event/csrc.png'
 import Ticket from './Ticket';
 import about from '../Assets/Images/about.png'
 
@@ -151,6 +154,42 @@ export default function Events() {
           {display ? <Ticket data={data} /> : <div></div>} 
         </div>
         <div className='pt-3'>
+
+{/* Conclave */}
+      <div className="row padd ">
+          <div className="event-name" id="ws">Conclaves</div>
+            
+            <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={csrc} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  CSR Conclave
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#csrcmodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.csrc === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("csrc")} id="csrc" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
+            
+            
+
+          </div>
+
 {/* rap battle */}
         <div className="row padd ">
           {/* <div className="event-name" id="ws">Discussions</div> */}
@@ -337,7 +376,59 @@ export default function Events() {
         {/* sessions */}
           <div className="row padd ">
           <div className="event-name" id="ws">Speaker Sessions</div>
-            
+          
+          <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={mental} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Mental Health Matters
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#mentalmodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.mental === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("mental")} id="mental" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
+          <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={women} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Her Health Demystified
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#womenmodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.menstrual === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("menstrual")} id="menstrual" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
           <div className="col-lg-6 cen mb-5">
               <div className="outer-box cen">
                 <div className="img">
@@ -830,6 +921,30 @@ E-certificates for all the participants!
   </div>
 </div>
 
+
+<div class="modal fade" id="womenmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={women} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Her Health Demystified
+                </div>
+                Join us for "Her Health Demystified" at Abhyuday's Social Fest, featuring Dr. Anjali Kumar. Learn from the expert and dispel myths about women's health. From menstruation to cancer, practical solutions for optimal health. Don't miss this opportunity to learn from one of the leading experts in women's health.
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="rapmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content ">
@@ -850,6 +965,56 @@ E-certificates for all the participants!
 
 Followed by a performance by the judges:- 
 MC Heam -Hip-hop artist is known for his dynamic performances | Coach at MTV Hustle 2.0 | Teacher at @tddp. MC Josh and Azim - A classic duo from Mumbai who has set the stage on fire with bangers like Push Me and AASMAAN.
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="mentalmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={mental} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Mental Health Matters
+                </div>
+                "What mental health needs is more sunlight, more candor and more unashamed conversation" - Glenn Close. 
+
+It is becoming clearer day by day that we need to drive more conversations around mental health. We have with us Ananya Birla! - artist, businesswoman and mental health advocate to share her experiences of her mental health journey and interact with the audience to spread light on the topic of Mental health awareness. 
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="csrcmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={csrc} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        CSR Conclave
+                </div>
+                Join us for the CSR Conclave wherein we have organizations that are interested in discussing and promoting the concept of businesses taking responsibility for the impact they have on society and the environment.
+
+Pipal Tree Foundation is here to tell about how the tribal efforts are helping it create a business and helping the community in return. Similarly the organisations onboard like: Godrej, Animal Angels, Aseema Charitable Trust, etc. have some unique initiatives to tell to the people.
                 </div>
       </div>
     </div>
