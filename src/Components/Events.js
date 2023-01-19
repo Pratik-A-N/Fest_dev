@@ -23,6 +23,7 @@ import mental from '../Assets/Images/Event/ananyabirla.png'
 import media from '../Assets/Images/Event/media.png'
 import csrc from '../Assets/Images/Event/csrc.png'
 import pehchan from '../Assets/Images/Event/pehchan.jpeg'
+import concert from '../Assets/Images/Event/concert.png'
 import Ticket from './Ticket';
 import about from '../Assets/Images/about.png'
 
@@ -157,6 +158,95 @@ export default function Events() {
         </div>
         <div className='pt-3'>
 
+{/* rap battle */}
+<div className="row padd ">
+          <div className="event-name" id="ws">Culturals</div>
+
+           
+            
+          <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={concert} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Concert for a Cause
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#concertmodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.coc === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("coc")} id="coc" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
+            <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={rap} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Battle of the Bars
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#rapmodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.rap === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("rap")} id="rap" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
+            <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={pehchan} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Pehchan
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#pehchanmodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={login} className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
+            
+            
+
+          </div>
+
 {/* Conclave */}
       <div className="row padd ">
           <div className="event-name" id="ws">Conclaves</div>
@@ -218,66 +308,6 @@ export default function Events() {
 
           </div>
 
-{/* rap battle */}
-        <div className="row padd ">
-          <div className="event-name" id="ws">Culturals</div>
-            
-            <div className="col-lg-6 cen mb-5">
-              <div className="outer-box cen">
-                <div className="img">
-                  <img src={rap} alt="" className='eventimg'  />
-                </div>
-                <div className="etitle">
-                  Battle of the Bars
-                </div>
-              </div>
-              <div className="about-event">
-              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#rapmodal">
-                <img src={about} alt="" id='about-icon' />
-              </button>
-              <div>
-                {(()=>{
-                        if(state !=null && data.rap === true){
-                          return <div className='regbt'>Registered</div>
-                        }else{
-                          return <button type='button' onClick={(e)=> handlereg("rap")} id="rap" className='regbt'>Register</button>
-                        }
-                      })()
-                }
-              </div>
-              </div>
-            </div>
-
-            <div className="col-lg-6 cen mb-5">
-              <div className="outer-box cen">
-                <div className="img">
-                  <img src={pehchan} alt="" className='eventimg'  />
-                </div>
-                <div className="etitle">
-                  Pehchan
-                </div>
-              </div>
-              <div className="about-event">
-              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#pehchanmodal">
-                <img src={about} alt="" id='about-icon' />
-              </button>
-              <div>
-                {(()=>{
-                        if(state !=null){
-                          return <div className='regbt'>Registered</div>
-                        }else{
-                          return <button type='button' onClick={login} className='regbt'>Register</button>
-                        }
-                      })()
-                }
-              </div>
-              </div>
-            </div>
-
-            
-            
-
-          </div>
           
 {/* Discussion */}
         <div className="row padd ">
@@ -1123,6 +1153,33 @@ Join us for the Media Conclave and be a part of these fierce open discussions.
                 Pehchaan: The Unsung Heroes is an initiative by Being Social in collaboration with Abhyuday IIT Bombay with the aim of providing underprivileged kids with an opportunity to showcase their talent in dancing, singing, and painting.
 
 Join us to witness the Grand Finale of this three-month journey of the children at our Annual Social Fest on the 21st and 22nd of January, 2023 at IIT Bombay!
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="concertmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={concert} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Concert for a Cause
+                </div>
+                "Uniting for a cause through the power of music. "
+
+Join us for an unforgettable night with Headliner @anumita.nadesan and an opening performance by @tddp_in in association with Clustera at #ConcertForACause.
+
+Book your seats now
                 </div>
       </div>
     </div>

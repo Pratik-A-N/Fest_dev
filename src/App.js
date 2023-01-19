@@ -12,6 +12,12 @@ import Ticket from './Components/Ticket';
 import Navbar from './Components/Navbar';
 import Animate from './Components/Animate';
 import Improv from './Components/Improv';
+// import Ireg from './Components/Ireg';
+
+// import Ireg from './Components/Imp/Ireg';
+
+// import Improv from './Components/Improv';
+
 
 class App extends Component {
   render() {
@@ -25,6 +31,7 @@ class App extends Component {
           <Route exact path='/events' element={ <Events/> }></Route>
           <Route exact path='/compi' element={ <Compi/> }></Route>
           <Route exact path='/register' element={ <Reg/> }></Route>
+          {/* <Route exact path='/improvreg' element={ <Ireg/> }></Route> */}
           <Route exact path='/contact' element={ <Contact/> }></Route>
           <Route exact path='/ticket' element={ <Ticket/> }></Route>
           <Route exact path='/improv' element={ <Improv/> }></Route>
