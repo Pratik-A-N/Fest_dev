@@ -160,7 +160,7 @@ export default function Events() {
 
 {/* rap battle */}
 <div className="row padd ">
-          <div className="event-name" id="ws">Culturals</div>
+          <div className="event-name" id="ws">Highlights</div>
 
            
             
