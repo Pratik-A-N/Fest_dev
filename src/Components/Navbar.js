@@ -26,6 +26,16 @@ export default function Navbar() {
     }
   }
 
+  const showDownNav =()=>{
+    // console.log("clicked");
+    var show = document.getElementById('tpm1')
+    if(show.style.display === 'none'){
+      document.getElementById('tpm1').style.display = 'flex'
+    }else{
+      document.getElementById('tpm1').style.display = 'none'
+    }
+  }
+
   const [Data, setData] = useState({})
   const [isLogin, setisLogin] = useState(false)
 
@@ -126,7 +136,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="right-nav">
+      <div className="right-nav" id='desktop-nav'>
         <div className="window" id='event-window'>
           <Link  to="/events" state={{data:Data}} >
             <div className="upper-lid" id='lid1'></div>
@@ -135,7 +145,13 @@ export default function Navbar() {
               </button>
           </Link>
         </div>
-        
+        <div className="window" id='work-window'>
+        <Link to="/sponsor">
+                <button className="book" >
+                  Sponsors
+                </button>
+              </Link>
+        </div>
         <div className="window" id='contact-window'>
         <Link to="/contact">
                 <button className="book" >
@@ -145,6 +161,42 @@ export default function Navbar() {
         </div>
         
       </div> 
+
+      <div className="right-nav" id='mobile-down-nav'>
+        <div className="window" id='event-window'>
+          <Link  to="/events" state={{data:Data}} >
+            <div className="upper-lid" id='lid1'></div>
+              <button className="book" >
+                Events
+              </button>
+          </Link>
+        </div>
+        <div>
+          <button onClick={showDownNav} >
+            <img src={arrow} alt="" id='up-icon' />
+          </button>
+        </div>
+        {/*  */}
+        
+      </div> 
+      <div class="tpm" id="tpm1">
+          <div className="window" id='work-window'>
+        <Link to="/sponsor">
+                <button className="book" >
+                  Sponsors
+                </button>
+              </Link>
+        </div>
+        <div className="window" id='contact-window'>
+        <Link to="/contact">
+                <button className="book" >
+                  Contact
+                </button>
+              </Link>
+        </div>
+          </div>
+
+      
     {/* </div> */}
       
     </>

@@ -1,5 +1,5 @@
 import React from 'react'
-import logo2 from '../Assets/Images/final.svg'
+import logo2 from '../Assets/Images/logo2.png'
 import bg from '../Assets/Images/bg.jpeg'
 
 

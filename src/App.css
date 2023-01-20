@@ -34,7 +34,9 @@ body{
   transition: 0.5s;
 }
 
-
+.spon{
+  z-index: 100;
+}
 
 .fluid-container{
   overflow-x: hidden;
@@ -127,6 +129,18 @@ a{
   }
 }
 
+@keyframes scroll-up {
+  0% {
+    transform: rotateZ(180deg) scale(1, 1);
+  }
+  50% {
+    transform: rotateZ(180deg) scale(1.2, 1.2);
+  }
+  100% {
+    transform: rotateZ(180deg) scale(1, 1);
+  }
+}
+
 .IdCard{
   width: 458px;
   height: 600px;
@@ -211,7 +225,7 @@ p{
 
 .blur{
   background: rgba(7, 10, 26, 0.5);
-  padding: 8vh 2vh;
+  padding: 4vh 2vh;
   backdrop-filter: blur(5px);
   border-radius: 5vh;
 
@@ -911,6 +925,10 @@ button{
   display: none;
 }
 
+#mobile-down-nav{
+  display:none;
+}
+
 @media screen and (max-width:1024px) {
   .etitle{
     font-size: 2.6vh;
@@ -1035,9 +1053,25 @@ button{
 
 }
 
+#up-icon{
+  width: 6vw;
+  transform: rotateZ(180deg);
+  animation: scroll-up 1.5s infinite ease-in;
+}
+
 #tpm{
   position: fixed;
   top: 12vh;
+  z-index: 1;
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+#tpm1{
+  position: fixed;
+  bottom: 12vh;
   z-index: 1;
   display: none;
   justify-content: space-evenly;
@@ -1079,11 +1113,12 @@ button{
     height: 12vh;
     bottom: 0;
     flex-direction: row;
+    justify-content: space-evenly;
     width: 100%;
   }
   .window{
     width: fit-content;
-    margin: 0 4vh;
+    margin: 0;
   }
   .bx{
     width: 69%;
@@ -1155,5 +1190,8 @@ button{
   }
   #logo2{
     width: 70vw;
+  }
+  #mobile-down-nav{
+    display: flex;
   }
 }

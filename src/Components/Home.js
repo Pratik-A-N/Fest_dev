@@ -6,7 +6,7 @@ import bg from '../Assets/Images/bg.jpeg'
 // import TestGoogle from './TestGoogle'
 import About from './About'
 import down from '../Assets/Images/dow.png'
-import sociologo from '../Assets/Images/final.svg'
+import sociologo from '../Assets/Images/logo2.png'
 
 export default function Home() {
   return (

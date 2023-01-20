@@ -24,6 +24,8 @@ import media from '../Assets/Images/Event/media.png'
 import csrc from '../Assets/Images/Event/csrc.png'
 import pehchan from '../Assets/Images/Event/pehchan.jpeg'
 import concert from '../Assets/Images/Event/concert.png'
+import expo from '../Assets/Images/Event/expo.png'
+import thea from '../Assets/Images/Event/thea.png'
 import Ticket from './Ticket';
 import about from '../Assets/Images/about.png'
 
@@ -162,7 +164,31 @@ export default function Events() {
 <div className="row padd ">
           <div className="event-name" id="ws">Highlights</div>
 
-           
+          <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={thea} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  Abhivyakti
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className='mb-3' data-bs-toggle="modal" data-bs-target="#theamodal">
+                <img src={about} alt="" id='about-icon' />
+              </button>
+              <div>
+                {(()=>{
+                        if(state !=null && data.theatre === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("theatre")} id="theatre" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
             
           <div className="col-lg-6 cen mb-5">
               <div className="outer-box cen">
@@ -399,6 +425,33 @@ export default function Events() {
       <div className="row padd ">
           <div className="event-name" id="ws">Exhibitions</div>
             
+          <div className="col-lg-6 cen mb-5">
+              <div className="outer-box cen">
+                <div className="img">
+                  <img src={expo} alt="" className='eventimg'  />
+                </div>
+                <div className="etitle">
+                  The Sustainability Expo
+                </div>
+              </div>
+              <div className="about-event">
+              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#expomodal">
+              <img src={about} alt="" id='about-icon' />
+
+              </button>
+              <div >
+                {(()=>{
+                        if(state !=null && data.sspe === true){
+                          return <div className='regbt'>Registered</div>
+                        }else{
+                          return <button type='button' onClick={(e)=> handlereg("sspe")} id="sspe" className='regbt'>Register</button>
+                        }
+                      })()
+                }
+              </div>
+              </div>
+            </div>
+
             <div className="col-lg-6 cen mb-5">
               <div className="outer-box cen">
                 <div className="img">
@@ -425,32 +478,7 @@ export default function Events() {
               </div>
             </div>
 
-            {/* <div className="col-lg-6 cen mb-5">
-              <div className="outer-box cen">
-                <div className="img">
-                  <img src={block} alt="" className='eventimg'  />
-                </div>
-                <div className="etitle">
-                  Blockchain meets Sustainability
-                </div>
-              </div>
-              <div className="about-event">
-              <button type="button" className=' mb-3' data-bs-toggle="modal" data-bs-target="#blockmodal">
-              <img src={about} alt="" id='about-icon' />
-
-              </button>
-              <div >
-                {(()=>{
-                        if(state !=null && data.block === true){
-                          return <div className='regbt'>Registered</div>
-                        }else{
-                          return <button type='button' onClick={(e)=> handlereg("block")} id="block" className='regbt'>Register</button>
-                        }
-                      })()
-                }
-              </div>
-              </div>
-            </div> */}
+            
             
             
 
@@ -1180,6 +1208,63 @@ Join us to witness the Grand Finale of this three-month journey of the children 
 Join us for an unforgettable night with Headliner @anumita.nadesan and an opening performance by @tddp_in in association with Clustera at #ConcertForACause.
 
 Book your seats now
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="expomodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={expo} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        The Sustainability Expo
+                </div>
+                “Use it up, wear it out, make it do, or do without.”
+
+Explore sustainable solutions at The Sustainable Expo! So many eco-friendly options to choose from for a better standard of living.
+
+See you at the exhibition during the Social Fest 2023!
+
+#sustainability #ecofriendly
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="theamodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div className="row display-flex justify-content-center">
+        <div className="col-lg-5 cen">
+          <div className="img">
+            <img src={thea} alt="" className='eventimg'  />
+          </div>
+          
+          </div>
+        <div className="col-lg-7 event-disc cen ">
+        <div className="etitl">
+        Abhivyakti
+                </div>
+                "Power of expression is inherent, just mode differs" - Amol Gade.
+
+We present to you "Abhivyakti", where you get to witness the expression of such thoughts through poetry, story-telling and stage play.
+
+Presenting to you @Ruchika Lohiya, @Rakesh Tiwari and @Rutwik Deshpande for the poetry showcase, followed by a breath-taking stage play, 'Khoya Hua Aadmi' by Kites Acting Studio.
+See you at the Social Fest 2023.
                 </div>
       </div>
     </div>
