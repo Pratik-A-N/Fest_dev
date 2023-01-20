@@ -46,6 +46,12 @@ body{
   background-size: cover; */
 }
 
+#convo{
+  position:fixed;
+  top: 15vh;
+  z-index: 5;
+  animation: scroll 2s infinite linear;
+}
 
 #bg{
   position: absolute;

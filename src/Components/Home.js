@@ -12,8 +12,6 @@ export default function Home() {
   return (
     <div className="fluid-container">
       <img src={bg} alt="" id='bg' />
-      {/* <Navbar/> */}
-      {/* <Google/> */}
       <a className='scrollbt' href='#about'>
         <img src={down} alt="" id='down'/>
       </a>

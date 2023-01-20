@@ -13,6 +13,8 @@ import Navbar from './Components/Navbar';
 import Animate from './Components/Animate';
 import Improv from './Components/Improv';
 import Sponsor from './Components/Sponsor';
+import Convoreg from './Components/Convoreg';
+import ConvoTicket from './Components/ConvoTicket';
 
 // import Ireg from './Components/Ireg';
 
@@ -38,6 +40,9 @@ class App extends Component {
           <Route exact path='/ticket' element={ <Ticket/> }></Route>
           <Route exact path='/improv' element={ <Improv/> }></Route>
           <Route exact path='/sponsor' element={ <Sponsor/> }></Route>
+          <Route exact path='/convoreg' element={ <Convoreg/> }></Route>
+          <Route exact path='/convoticket' element={ <ConvoTicket/> }></Route>
+
 
 
           {/* <Route exact path='/animate' element={ <Animate/> }></Route> */}
